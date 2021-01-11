@@ -162,7 +162,7 @@ def getMolecularWeight(compound):
             if x == y.symbol:
                 mw = mw + y.weight
     
-    mw = '{0:.8g}'.format(mw)
+    mw = f'{round(mw, 8)}'
     return mw
 
 def getMol(compound, grams):
@@ -182,8 +182,8 @@ def getMol(compound, grams):
     mc : double
         The molecular weight of the compound based on amount given.
     """
-    mw = '{0:.8f}'.format(getMolecularWeight(compound))
-    mc = '{0:.8f}'.format((mw * grams))
+    mw = float(getMolecularWeight(compound))
+    mc = f'{round(mw * grams, 8)}'
     
     return mc
 
